@@ -1,9 +1,8 @@
 import MovieCard from "./MovieCard";
+import PageControl from "./PageControl";
 
-function MovieGrid({ movies }) {
+function MovieGrid({ movies, page, totalPages, setPage }) {
   let movieCards = null;
-
-  console.log("Movies", movies);
 
   if (!!movies) {
     movieCards = movies.map((movie) => {
@@ -16,8 +15,11 @@ function MovieGrid({ movies }) {
   }
 
   return (
-    <div className="container">
-      <div className="row">{movieCards}</div>
+    <div>
+      <PageControl page={page} totalPages={totalPages} setPage={setPage} />
+      <div className="container">
+        <div className="row">{movieCards}</div>
+      </div>
     </div>
   );
 }

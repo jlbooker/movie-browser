@@ -8,7 +8,7 @@ const API_BASE_URL = "https://0kadddxyh3.execute-api.us-east-1.amazonaws.com";
 function MovieBrowser() {
   // const queryClient = useQueryClient();
   const [searchText, setSearchText] = useState("");
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [genre, setGenre] = useState("");
 
   // API Bearer Token API
@@ -44,7 +44,12 @@ function MovieBrowser() {
   return (
     <div>
       <SearchForm onChange={setSearchText} />
-      <MovieGrid movies={moviesQuery.data?.data} />
+      <MovieGrid
+        movies={moviesQuery.data?.data}
+        page={page}
+        totalPages={moviesQuery.data?.totalPages}
+        setPage={setPage}
+      />
     </div>
   );
 }

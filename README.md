@@ -4,9 +4,9 @@ This quick React demo app for searching and filtering with a movie API.
 
 ## Minimum Requirements
 
-- [ ] I can search for movies and see a paginated list of results
+- [x] I can search for movies and see a paginated list of results
+- [x] I can navigate through the next and previous pages of the paginated results
 - [ ] I can filter search results by genre
-- [ ] I can navigate through the next and previous pages of the paginated results
 - [ ] I see the total count of search results
 - [ ] I see notable information for each search result, such as the summary, poster,
       duration, rating, etc.
