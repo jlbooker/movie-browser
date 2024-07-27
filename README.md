@@ -16,6 +16,9 @@ This quick React demo app for searching and filtering with a movie API.
 ## Other
 
 - [ ] GitHub action to deploy to GitHub Pages
+- [ ] Loading animation for pending queries
+- [ ] Accessibility audit
+- [ ] Router
 
 # Getting Started with Create React App
 
