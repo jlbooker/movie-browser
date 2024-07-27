@@ -17,7 +17,7 @@ function SearchForm({ onChange }) {
 
   return (
     <div className="mb-3">
-      <label for="searchText" className="form-label">
+      <label htmlFor="searchText" className="form-label">
         Search
       </label>
       <input
