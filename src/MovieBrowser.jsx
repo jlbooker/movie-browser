@@ -30,7 +30,7 @@ function MovieBrowser() {
     queryKey: ["movies", searchText, page, genre],
     queryFn: async () => {
       const response = await fetch(
-        `${API_BASE_URL}/movies?search=${searchText}&page=${page}&genre=${genre}`,
+        `${API_BASE_URL}/movies?search=${searchText}&page=${page}&genre=${genre}&limit=16`,
         {
           headers: { Authorization: `Bearer ${apiToken.token}` },
         }
@@ -41,6 +41,29 @@ function MovieBrowser() {
       return response.json();
     },
     enabled: !!apiToken?.token,
+    staleTime: 300000,
+  });
+
+  // A separate query to get the full size of the results count
+  // A bit of a hack... Since the API doesn't give a total results count,
+  // we run the same query again with a limit of 1 item per page, and then
+  // use the page count. Cheeky, if a bit wasteful.
+  const resultsCountQuery = useQuery({
+    queryKey: ["resultsCount", searchText, page, genre],
+    queryFn: async () => {
+      const response = await fetch(
+        `${API_BASE_URL}/movies?search=${searchText}&page=${page}&genre=${genre}&limit=1`,
+        {
+          headers: { Authorization: `Bearer ${apiToken.token}` },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("There was an error while searching for movie titles.");
+      }
+      return response.json();
+    },
+    enabled: !!apiToken?.token,
+    staleTime: 300000,
   });
 
   // Genres query
@@ -56,6 +79,7 @@ function MovieBrowser() {
       return response.json();
     },
     enabled: !!apiToken?.token,
+    staleTIme: Infinity,
   });
 
   return (
@@ -73,6 +97,7 @@ function MovieBrowser() {
           movies={moviesQuery.data?.data}
           page={page}
           totalPages={moviesQuery.data?.totalPages}
+          totalResultsCount={resultsCountQuery.data?.totalPages}
           setPage={setPage}
         />
       </div>

@@ -1,4 +1,4 @@
-function PageControl({ page, totalPages, setPage }) {
+function PageControl({ page, totalPages, totalResultsCount, setPage }) {
   // Returns the "Previous" link
   const prevPageLink = () => {
     // Return a disabled view when on page 1
@@ -106,13 +106,20 @@ function PageControl({ page, totalPages, setPage }) {
     return "";
   };
 
+  const titlePlural = totalResultsCount < 2 ? "title" : "titles";
+
   return (
     <div className="container text-center">
       <div className="row">
-        <div className="col-md-2 offset-md-7">
-          <p className="text-end">{totalPages} pages</p>
+        <div className="col-md-2">
+          <p
+            className=""
+            style={{ paddingTop: ".5rem", paddingLeft: "-.5rem" }}
+          >
+            Found {totalResultsCount} {titlePlural}
+          </p>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 offset-md-7">
           <nav aria-label="Page navigation example" className="float-end">
             <ul className="pagination">
               {prevPageLink()}

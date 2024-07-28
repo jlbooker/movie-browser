@@ -1,7 +1,7 @@
 import MovieCard from "./MovieCard";
 import PageControl from "./PageControl";
 
-function MovieGrid({ movies, page, totalPages, setPage }) {
+function MovieGrid({ movies, page, totalPages, totalResultsCount, setPage }) {
   let movieCards = null;
 
   if (!!movies) {
@@ -16,7 +16,12 @@ function MovieGrid({ movies, page, totalPages, setPage }) {
 
   return (
     <div>
-      <PageControl page={page} totalPages={totalPages} setPage={setPage} />
+      <PageControl
+        page={page}
+        totalPages={totalPages}
+        totalResultsCount={totalResultsCount}
+        setPage={setPage}
+      />
       <div className="container">
         <div className="row">{movieCards}</div>
       </div>
