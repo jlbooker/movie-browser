@@ -18,7 +18,7 @@ function MovieCard({ movie }) {
     <>
       <div
         className="card mb-4"
-        style={{ width: "12rem" }}
+        style={{ width: "12rem", cursor: "pointer" }}
         onClick={handlePosterClick}
       >
         <MoviePoster movieTitle={movie.title} posterUrl={movie.posterUrl} />
