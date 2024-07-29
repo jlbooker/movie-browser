@@ -11,7 +11,7 @@ This quick React demo app for searching and filtering with a movie API.
 - [x] I see notable information for each search result, such as the summary, poster,
       duration, rating, etc.
 - [x] README Updates (interesting/significant, proud of, v2 features)
-- [ ] Deploy to GitHub Pages
+- [x] Deploy to GitHub Pages: https://jlbooker.github.io/movie-browser/
 
 ### Something Interesting / Significant
 
