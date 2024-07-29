@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import MovieGrid from "./MovieGrid";
 import SearchForm from "./SearchForm";
 import GenreList from "./GenreList";
+import { ApiTokenContext } from "./ApiTokenContext";
 
 const API_BASE_URL = "https://0kadddxyh3.execute-api.us-east-1.amazonaws.com";
 
 function MovieBrowser() {
-  // const queryClient = useQueryClient();
   const [searchText, setSearchText] = useState("");
   const [page, setPage] = useState(1);
   const [genre, setGenre] = useState("");
@@ -93,13 +93,15 @@ function MovieBrowser() {
       </div>
       <div className="col-md-9">
         <SearchForm onChange={setSearchText} />
-        <MovieGrid
-          movies={moviesQuery.data?.data}
-          page={page}
-          totalPages={moviesQuery.data?.totalPages}
-          totalResultsCount={resultsCountQuery.data?.totalPages}
-          setPage={setPage}
-        />
+        <ApiTokenContext.Provider value={apiToken}>
+          <MovieGrid
+            movies={moviesQuery.data?.data}
+            page={page}
+            totalPages={moviesQuery.data?.totalPages}
+            totalResultsCount={resultsCountQuery.data?.totalPages}
+            setPage={setPage}
+          />
+        </ApiTokenContext.Provider>
       </div>
     </div>
   );

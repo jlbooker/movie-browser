@@ -8,18 +8,20 @@ This quick React demo app for searching and filtering with a movie API.
 - [x] I can navigate through the next and previous pages of the paginated results
 - [x] I can filter search results by genre
 - [x] I see the total count of search results
-- [ ] I see notable information for each search result, such as the summary, poster,
+- [x] I see notable information for each search result, such as the summary, poster,
       duration, rating, etc.
 - [ ] README Updates (interesting/significant, proud of, v2 features)
 - [ ] Deploy to GitHub Pages
 
 ## TODO
 
+- [ ] Zero state
 - [ ] GitHub action to build & deploy to GitHub Pages
 - [ ] Unit test (Jest)
 - [ ] Loading animation for pending queries
 - [ ] Accessibility audit / react-axe
 - [ ] React-router
+- [ ] Better star-emoji component for ratings (@smastrom/react-rating looks promising)
 
 ## Getting Started with Create React App
 

@@ -24,7 +24,7 @@ function MoviePoster({ movieTitle, posterUrl }) {
       <img
         src={posterUrl}
         className="card-img-top"
-        style={{ maxHeight: "282px" }}
+        // style={{ maxHeight: "282px" }}
         alt={`Movie poster for ${movieTitle}`}
       />
     );
