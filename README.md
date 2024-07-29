@@ -15,7 +15,7 @@ This quick React demo app for searching and filtering with a movie API.
 
 ## TODO
 
-- [ ] Zero state
+- [x] Zero state
 - [ ] GitHub action to build & deploy to GitHub Pages
 - [ ] Unit test (Jest)
 - [ ] Loading animation for pending queries
