@@ -10,10 +10,26 @@ This quick React demo app for searching and filtering with a movie API.
 - [x] I see the total count of search results
 - [x] I see notable information for each search result, such as the summary, poster,
       duration, rating, etc.
-- [ ] README Updates (interesting/significant, proud of, v2 features)
+- [x] README Updates (interesting/significant, proud of, v2 features)
 - [ ] Deploy to GitHub Pages
 
+### Something Interesting / Significant
+
+I'm reminded (again) of how efficient react-query is. The way it manages all of the fetching states and edge cases
+allowed me to quickly move past the basic API fetches and start adding UI around the results.
+
+### Most Pleased / Proud of with this implementation
+
+I'd mention a few things here:
+
+- The component structure is fairly clean. State is kept localized where possible. I was even able to reuse a few components.
+- There's no brute-forcing the API. Given the API structure, it would've been easy to fetch results in a loop (for-each movie, genre, etc),
+  but I was able to carefully avoid that.
+- It doesn't look too shabby. I'm pleased with how the layout and usability turned out.
+
 ## TODO
+
+Given more time, I'd tackle the following features/enhancements:
 
 - [x] Zero state
 - [ ] GitHub action to build & deploy to GitHub Pages
