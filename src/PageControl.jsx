@@ -30,7 +30,7 @@ function PageControl({ page, totalPages, totalResultsCount, setPage }) {
   // Return the "Next" page link
   const nextPageLink = () => {
     // Return disabled state when on the last page
-    if (page === totalPages) {
+    if (page === totalPages || totalPages === 0) {
       return (
         <li className="page-item disabled">
           <span className="page-link">Next</span>
