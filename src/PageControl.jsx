@@ -106,7 +106,7 @@ function PageControl({ page, totalPages, totalResultsCount, setPage }) {
     return "";
   };
 
-  const titlePlural = totalResultsCount < 2 ? "title" : "titles";
+  const titlePlural = totalResultsCount === 1 ? "title" : "titles";
 
   return (
     <div className="container text-center">
