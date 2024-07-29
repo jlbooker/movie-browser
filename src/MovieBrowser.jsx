@@ -82,13 +82,18 @@ function MovieBrowser() {
     staleTIme: Infinity,
   });
 
+  const changeGenre = (genreName) => {
+    setGenre(genreName);
+    setPage(1); // Always go back to the first page when we change genres
+  };
+
   return (
     <div className="row">
       <div className="col-md-3">
         <GenreList
           genres={genresQuery.data?.data}
           selectedGenre={genre}
-          setGenre={setGenre}
+          setGenre={changeGenre}
         />
       </div>
       <div className="col-md-9">
